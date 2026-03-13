@@ -2,15 +2,21 @@
 
 import 'package:flutter/material.dart';
 
-class UserDashboard extends StatelessWidget {
+class UserDashboard extends StatefulWidget {
   const UserDashboard({super.key});
+  @override
+  State<UserDashboard> createState() => _UserDashboardState();
+}
 
+class _UserDashboardState extends State<UserDashboard> {
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:
           Colors.white, // we'll change to match your original later
       body: Column(
+        mainAxisSize: MainAxisSize.max,
         children: [
           // Header with location and SOS
           Container(
@@ -110,7 +116,7 @@ class UserDashboard extends StatelessWidget {
         unselectedItemColor: Colors.grey,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        currentIndex: 0, // home selected by default
+        currentIndex: _selectedIndex, // home selected by default
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -134,6 +140,9 @@ class UserDashboard extends StatelessWidget {
           ),
         ],
         onTap: (index) {
+          setState(() {
+            _selectedIndex = index; // this highlights the tapped icon
+          });
           // Temporary feedback - we can make real navigation later
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text('Tapped nav item $index')),
