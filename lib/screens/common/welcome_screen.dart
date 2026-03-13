@@ -76,6 +76,27 @@ class WelcomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 24,
               ), // space after button (for next elements later)
+
+              OutlinedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Skipped to demo / test mode'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                },
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  side: const BorderSide(color: Colors.white70),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
+                child: const Text("Skip for Demo / Test Mode"),
+              ),
+
+              const SizedBox(height: 40), // extra space at very bottom
             ],
           ),
         ),
