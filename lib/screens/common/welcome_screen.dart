@@ -1,3 +1,6 @@
+// WelcomeScreen - Onboarding entry point
+// Shows app branding, call-to-action buttons, and language options
+
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -38,7 +41,7 @@ class WelcomeScreen extends StatelessWidget {
                   height: 1.4,
                 ),
               ),
-              const SizedBox(height: 80), // ← extra space below text for now
+              const SizedBox(height: 48), // ← tighter spacing after subtitle
 
               const SizedBox(height: 40), // space before button
 
@@ -96,7 +99,9 @@ class WelcomeScreen extends StatelessWidget {
                 child: const Text("Skip for Demo / Test Mode"),
               ),
 
-              const SizedBox(height: 40), // extra space at very bottom
+              const SizedBox(
+                height: 32,
+              ), // slightly less space after Skip button
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -115,7 +120,9 @@ class WelcomeScreen extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 60), // generous bottom padding
+              const SizedBox(
+                height: 80,
+              ), // more breathing room at the very bottom
             ],
           ),
         ),
