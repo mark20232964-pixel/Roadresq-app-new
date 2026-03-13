@@ -36,16 +36,56 @@ class ProviderDashboard extends StatelessWidget {
           ),
 
           // Temporary placeholder for the rest (menu cards will come next)
-          const Expanded(
-            child: Center(
-              child: Text(
-                'Provider menu cards coming in next step',
-                style: TextStyle(fontSize: 20, color: Colors.black54),
-              ),
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              children: [
+                _buildMenuCard("Ongoing\nRequest", 'assets/images/ongoing.jpg'),
+                const SizedBox(height: 15),
+                _buildMenuCard("Calendar", 'assets/images/calendar.jpg'),
+                const SizedBox(height: 15),
+                GestureDetector(
+                  onTap: () {
+                    // Temporary: snackbar (we'll connect to real OurServicesScreen later)
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Our Services tapped')),
+                    );
+                  },
+                  child: _buildMenuCard(
+                      "Our\nServices", 'assets/images/service.jpg'),
+                ),
+              ],
             ),
           ),
         ],
       ),
     );
   }
+}
+
+Widget _buildMenuCard(String title, String imagePath) {
+  return Container(
+    height: 150,
+    width: double.infinity,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(25),
+      color: Colors.grey[300],
+      image: DecorationImage(
+        image: AssetImage(imagePath),
+        fit: BoxFit.cover,
+        colorFilter:
+            ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.darken),
+      ),
+    ),
+    padding: const EdgeInsets.all(25),
+    alignment: Alignment.centerLeft,
+    child: Text(
+      title,
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 28,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  );
 }
