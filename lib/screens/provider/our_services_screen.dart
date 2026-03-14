@@ -29,7 +29,8 @@ class OurServicesScreen extends StatelessWidget {
                 foregroundColor: Colors.white,
                 minimumSize: const Size(double.infinity, 56),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
             ),
             const SizedBox(height: 24),
@@ -59,16 +60,12 @@ class OurServicesScreen extends StatelessWidget {
         content: const Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            TextField(decoration: InputDecoration(labelText: "Service Name")),
             TextField(
-              decoration: const InputDecoration(labelText: "Service Name"),
+              decoration: InputDecoration(labelText: "Duration (e.g. 30 min)"),
             ),
             TextField(
-              decoration:
-                  const InputDecoration(labelText: "Duration (e.g. 30 min)"),
-            ),
-            TextField(
-              decoration:
-                  const InputDecoration(labelText: "Price (e.g. 2000 LKR)"),
+              decoration: InputDecoration(labelText: "Price (e.g. 2000 LKR)"),
             ),
           ],
         ),

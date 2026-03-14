@@ -54,11 +54,7 @@ class _UserDashboardState extends State<UserDashboard> {
                         ),
                       ],
                     ),
-                    Icon(
-                      Icons.error,
-                      color: Colors.red,
-                      size: 30,
-                    ), // SOS Icon
+                    Icon(Icons.error, color: Colors.red, size: 30), // SOS Icon
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -118,14 +114,8 @@ class _UserDashboardState extends State<UserDashboard> {
         showUnselectedLabels: false,
         currentIndex: _selectedIndex, // home selected by default
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
-            label: '',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: ''),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_bag_outlined),
             label: '',
@@ -134,7 +124,8 @@ class _UserDashboardState extends State<UserDashboard> {
             icon: CircleAvatar(
               radius: 12,
               backgroundImage: NetworkImage(
-                  'https://via.placeholder.com/150'), // temp avatar
+                'https://via.placeholder.com/150',
+              ), // temp avatar
             ),
             label: '',
           ),
@@ -144,9 +135,9 @@ class _UserDashboardState extends State<UserDashboard> {
             _selectedIndex = index; // this highlights the tapped icon
           });
           // Temporary feedback - we can make real navigation later
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Tapped nav item $index')),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text('Tapped nav item $index')));
         },
       ),
     );

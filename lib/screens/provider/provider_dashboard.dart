@@ -19,8 +19,12 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
         children: [
           // Header with location
           Container(
-            padding:
-                const EdgeInsets.only(top: 60, left: 20, right: 20, bottom: 20),
+            padding: const EdgeInsets.only(
+              top: 60,
+              left: 20,
+              right: 20,
+              bottom: 20,
+            ),
             decoration: const BoxDecoration(
               color: Color(0xFF1B1B4B), // dark navy blue
               borderRadius: BorderRadius.only(
@@ -30,13 +34,13 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
             ),
             child: const Row(
               children: [
-                const Icon(Icons.location_on, color: Colors.white, size: 20),
-                const SizedBox(width: 8),
-                const Text(
+                Icon(Icons.location_on, color: Colors.white, size: 20),
+                SizedBox(width: 8),
+                Text(
                   "New Town, Ratnapura",
                   style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
-                const Icon(Icons.keyboard_arrow_down, color: Colors.white),
+                Icon(Icons.keyboard_arrow_down, color: Colors.white),
               ],
             ),
           ),
@@ -58,7 +62,9 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                     );
                   },
                   child: _buildMenuCard(
-                      "Our\nServices", 'assets/images/service.jpg'),
+                    "Our\nServices",
+                    'assets/images/service.jpg',
+                  ),
                 ),
               ],
             ),
@@ -74,10 +80,7 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
         showUnselectedLabels: false,
         currentIndex: _selectedIndex, // ← this uses the state variable
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled),
-            label: '',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: ''),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_circle_outline),
             label: '',
@@ -90,7 +93,8 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
             icon: CircleAvatar(
               radius: 12,
               backgroundImage: NetworkImage(
-                  'https://via.placeholder.com/150'), // temp avatar
+                'https://via.placeholder.com/150',
+              ), // temp avatar
             ),
             label: '',
           ),
@@ -116,8 +120,10 @@ Widget _buildMenuCard(String title, String imagePath) {
       image: DecorationImage(
         image: AssetImage(imagePath),
         fit: BoxFit.cover,
-        colorFilter:
-            ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.darken),
+        colorFilter: ColorFilter.mode(
+          Colors.black.withOpacity(0.3),
+          BlendMode.darken,
+        ),
       ),
     ),
     padding: const EdgeInsets.all(25),

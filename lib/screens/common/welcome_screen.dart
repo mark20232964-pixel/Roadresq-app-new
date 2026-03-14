@@ -3,7 +3,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:roadresq/screens/common/role_selection_screen.dart';
-import 'role_selection_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
